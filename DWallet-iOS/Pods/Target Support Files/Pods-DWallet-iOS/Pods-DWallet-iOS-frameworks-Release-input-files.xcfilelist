@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-DWallet-iOS/Pods-DWallet-iOS-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework
+${BUILT_PRODUCTS_DIR}/TrustWalletCore/WalletCore.framework
+${PODS_ROOT}/../../shared/wallet/build/cocoapods/framework/wallet.framework
