@@ -18,9 +18,9 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting {
+        getByName("commonMain") {
             dependencies {
-                implementation("com.trustwallet:wallet-core-kotlin:3.1.34")
+                api("com.trustwallet:wallet-core-kotlin:3.1.34")
             }
         }
     }

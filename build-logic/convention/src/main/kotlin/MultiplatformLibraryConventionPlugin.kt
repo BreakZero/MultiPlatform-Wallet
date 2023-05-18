@@ -7,6 +7,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
@@ -30,6 +31,7 @@ class MultiplatformLibraryConventionPlugin : Plugin<Project> {
       }
       val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
       extensions.configure<KotlinMultiplatformExtension> {
+        jvmToolchain(17)
         android {
           compilations.all {
             kotlinOptions {
@@ -41,14 +43,18 @@ class MultiplatformLibraryConventionPlugin : Plugin<Project> {
         iosArm64()
         iosSimulatorArm64()
 
-        val commonMain = sourceSets.getByName("commonMain")
+        val commonMain = sourceSets.getByName("commonMain") {
+          dependencies {
+            implementation(libs.findLibrary("koin.core").get())
+          }
+        }
         val commonTest  = sourceSets.getByName("commonTest")
         val androidMain  = sourceSets.getByName("androidMain")
         val androidUnitTest  = sourceSets.getByName("androidUnitTest")
         val iosX64Main  = sourceSets.getByName("iosX64Main")
         val iosArm64Main  = sourceSets.getByName("iosArm64Main")
         val iosSimulatorArm64Main  = sourceSets.getByName("iosSimulatorArm64Main")
-        val iosMain  = sourceSets.create("iosMain") {
+        sourceSets.create("iosMain") {
           dependsOn(commonMain)
           iosX64Main.dependsOn(this)
           iosArm64Main.dependsOn(this)

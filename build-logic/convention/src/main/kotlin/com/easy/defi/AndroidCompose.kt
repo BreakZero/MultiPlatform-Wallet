@@ -17,6 +17,7 @@
 package com.easy.defi
 
 import com.android.build.api.dsl.CommonExtension
+import org.gradle.api.JavaVersion
 import java.io.File
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalogsExtension

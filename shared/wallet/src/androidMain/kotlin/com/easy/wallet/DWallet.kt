@@ -3,11 +3,9 @@ package com.easy.wallet
 import com.trustwallet.core.HDWallet
 
 actual class DWallet {
-
     init {
         System.loadLibrary("TrustWalletCore")
     }
-
     actual fun createWallet(): HDWallet {
         return HDWallet(256, "")
     }

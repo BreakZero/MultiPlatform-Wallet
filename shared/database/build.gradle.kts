@@ -1,5 +1,6 @@
 plugins {
     id("easy.multiplatform.library")
+    id("app.cash.sqldelight") version libs.versions.sqldelight
 }
 
 kotlin {
@@ -12,8 +13,35 @@ kotlin {
             baseName = "database"
         }
     }
+
+    sourceSets {
+        getByName("commonMain") {
+            dependencies {
+                implementation(libs.sqldelight.coroutines)
+            }
+        }
+        getByName("androidMain") {
+            dependencies {
+                implementation(libs.sqldelight.android)
+            }
+        }
+        getByName("iosMain") {
+            dependencies {
+                implementation(libs.sqldelight.native)
+            }
+        }
+    }
 }
 
 android {
     namespace = "com.easy.core.database"
+}
+
+sqldelight {
+    databases {
+        create("EasyDatabase") {
+            packageName.set("com.easy.core.database")
+        }
+    }
+    linkSqlite.set(true)
 }
