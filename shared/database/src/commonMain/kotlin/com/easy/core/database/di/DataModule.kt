@@ -8,6 +8,7 @@ import org.koin.dsl.module
 expect fun factoryModule(): Module
 
 val databaseModule = module {
-    factoryModule()
-    singleOf(::DatabaseWrapper)
+    single {
+        DatabaseWrapper(get())
+    }
 }

@@ -18,6 +18,7 @@ kotlin {
         getByName("commonMain") {
             dependencies {
                 implementation(libs.sqldelight.coroutines)
+                implementation(project(":shared:model"))
             }
         }
         getByName("androidMain") {

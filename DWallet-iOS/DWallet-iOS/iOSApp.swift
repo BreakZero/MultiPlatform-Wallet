@@ -8,7 +8,12 @@ struct iOSApp: App {
     }
 	var body: some Scene {
 		WindowGroup {
-			ContentView()
+			ToDoListScreen(todoListViewModel: ToDoListViewModel())
 		}
 	}
+}
+
+class KoinManager {
+    static let shared = KoinHelper()
+    static let todoHelper = ToDoHelper()
 }

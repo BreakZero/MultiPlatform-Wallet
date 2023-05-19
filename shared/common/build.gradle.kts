@@ -16,12 +16,14 @@ kotlin {
             baseName = "common"
             isStatic = true
         }
+        xcodeConfigurationToNativeBuildType["Debug"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.RELEASE
     }
     sourceSets {
         getByName("commonMain") {
             dependencies {
                 api(project(":shared:database"))
                 api(project(":shared:wallet"))
+                api(project(":shared:model"))
             }
         }
     }
