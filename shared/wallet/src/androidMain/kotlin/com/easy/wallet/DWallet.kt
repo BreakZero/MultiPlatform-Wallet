@@ -2,7 +2,7 @@ package com.easy.wallet
 
 import com.trustwallet.core.HDWallet
 
-actual class DWallet {
+actual class DWallet actual constructor() {
     init {
         System.loadLibrary("TrustWalletCore")
     }

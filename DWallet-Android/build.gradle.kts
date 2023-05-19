@@ -23,8 +23,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":shared:wallet"))
-    implementation(project(":shared:database"))
+    implementation(project(":shared:common"))
+    implementation(project(":shared:model"))
 
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.androidx.activity.compose)
@@ -51,4 +51,6 @@ dependencies {
 
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.svg)
+
+    implementation(libs.koin.android)
 }

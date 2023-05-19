@@ -1,5 +1,5 @@
 target 'DWallet-iOS' do
   use_frameworks!
   platform :ios, '14.1'
-  pod 'wallet', :path => '../shared/wallet'
+  pod 'common', :path => '../shared/common'
 end

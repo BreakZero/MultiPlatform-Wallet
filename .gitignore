@@ -45,3 +45,4 @@ _sandbox
 captures/
 
 locals/*
+DWallet-iOS/Pods/*

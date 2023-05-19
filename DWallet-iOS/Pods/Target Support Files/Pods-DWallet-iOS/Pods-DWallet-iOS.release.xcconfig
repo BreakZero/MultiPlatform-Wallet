@@ -1,10 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/SwiftProtobuf" "${PODS_CONFIGURATION_BUILD_DIR}/TrustWalletCore" "${PODS_ROOT}/../../shared/wallet/build/cocoapods/framework" "${PODS_ROOT}/TrustWalletCore" "${PODS_XCFRAMEWORKS_BUILD_DIR}/WalletCoreCommon"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/SwiftProtobuf" "${PODS_CONFIGURATION_BUILD_DIR}/TrustWalletCore" "${PODS_ROOT}/../../shared/common/build/cocoapods/framework" "${PODS_ROOT}/TrustWalletCore" "${PODS_XCFRAMEWORKS_BUILD_DIR}/WalletCoreCommon"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/SwiftProtobuf/SwiftProtobuf.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/TrustWalletCore/WalletCore.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -framework "SwiftProtobuf" -framework "WalletCore" -framework "wallet"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -framework "SwiftProtobuf" -framework "WalletCore" -framework "common"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

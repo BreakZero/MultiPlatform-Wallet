@@ -1,5 +1,16 @@
 package com.easy.d.wallet.android
 
 import android.app.Application
+import com.easy.core.common.di.appModules
+import com.easy.d.wallet.android.di.featureModules
+import org.koin.core.context.startKoin
 
-class WalletApplication: Application()
+class WalletApplication: Application() {
+    override fun onCreate() {
+        super.onCreate()
+        startKoin {
+            modules(appModules())
+            modules(featureModules)
+        }
+    }
+}

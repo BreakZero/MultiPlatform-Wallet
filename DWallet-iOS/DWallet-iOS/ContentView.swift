@@ -1,14 +1,13 @@
 import SwiftUI
-import wallet
+import common
 
 struct ContentView: View {
-    var wallet = DWallet().currWallet()
-
+    var wallet = KoinHelper().wallet()
 	var body: some View {
         VStack {
             Text("Hello")
             Spacer()
-            Text(wallet.mnemonic)
+            Text(wallet.currWallet().mnemonic)
         }
 	}
 }

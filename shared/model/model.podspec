@@ -1,24 +1,24 @@
 Pod::Spec.new do |spec|
-    spec.name                     = 'common'
+    spec.name                     = 'model'
     spec.version                  = '1.0'
     spec.homepage                 = 'Link to the Shared Module homepage'
     spec.source                   = { :http=> ''}
     spec.authors                  = ''
     spec.license                  = ''
     spec.summary                  = 'Some description for the Shared Module'
-    spec.vendored_frameworks      = 'build/cocoapods/framework/common.framework'
+    spec.vendored_frameworks      = 'build/cocoapods/framework/model.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target = '14.1'
-    spec.dependency 'TrustWalletCore'
+                
                 
     spec.pod_target_xcconfig = {
-        'KOTLIN_PROJECT_PATH' => ':shared:common',
-        'PRODUCT_MODULE_NAME' => 'common',
+        'KOTLIN_PROJECT_PATH' => ':shared:model',
+        'PRODUCT_MODULE_NAME' => 'model',
     }
                 
     spec.script_phases = [
         {
-            :name => 'Build common',
+            :name => 'Build model',
             :execution_position => :before_compile,
             :shell_path => '/bin/sh',
             :script => <<-SCRIPT
