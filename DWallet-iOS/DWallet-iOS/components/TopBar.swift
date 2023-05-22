@@ -10,19 +10,34 @@ import SwiftUI
 
 struct TopBar: View {
     var items: [String]
+    @State var selectedItem: String
+    
+    init(items: [String]) {
+        self.items = items
+        self.selectedItem = items.first ?? ""
+    }
+    
     var body: some View {
         HStack {
             Image(systemName: "arrow.down")
             Menu {
                 ForEach(items.indices, id: \.self) { index in
-                    Button {} label: {
+                    Button {
+                        selectedItem = items[index]
+                    } label: {
                         Text(items[index])
                     }
                 }
             } label: {
-                Label("Category", systemImage: "plus").labelStyle(TrailingIconLabelStyle())
+                Label(
+                    selectedItem, systemImage: ""
+                ).labelStyle(TrailingIconLabelStyle())
             }.frame(maxWidth: .infinity)
-            Image(systemName: "plus")
+            NavigationLink {
+                ToDoEditScreen(taskName: "")
+            } label: {
+                Image(systemName: "plus")
+            }
         }
     }
 }

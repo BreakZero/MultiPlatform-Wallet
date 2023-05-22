@@ -13,11 +13,18 @@ struct ToDoListScreen: View {
     @ObservedObject var todoListViewModel: ToDoListViewModel
     
     var body: some View {
-        VStack {
-            TopBar(items: ["Category1", "Category2", "Category3"]).padding([.leading, .trailing], 16)
-            ForEach(todoListViewModel.todoTasks, id: \.self.id) { item in
-                ToDoItemView(isChecked: false, task: item)
-            }.padding([.leading, .trailing], 16)
+        NavigationView {
+            VStack {
+                TopBar(items: ["Category1", "Category2", "Category3"]).padding([.leading, .trailing], 16)
+                
+                List(todoListViewModel.todoTasks, id: \.self.id) { task in
+                    NavigationLink {
+                        ToDoEditScreen(taskName: task.name)
+                    } label: {
+                        ToDoItemView(isChecked: false, task: task)
+                    }
+                }
+            }
             Spacer()
         }
     }

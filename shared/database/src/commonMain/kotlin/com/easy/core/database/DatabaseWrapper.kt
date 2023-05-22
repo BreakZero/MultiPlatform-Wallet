@@ -13,6 +13,6 @@ class DatabaseWrapper(databaseDriverFactory: DatabaseDriverFactory) {
     fun selectAllTask() = todoQuery.selectAllTask().asFlow().mapToList(Dispatchers.Default).map { it.map { ToDoTask(it.id, it.taskName) } }
 
     suspend fun insert(taskName: String) {
-        todoQuery.insertFull(ToDoTaskEntity(-1L, taskName))
+        todoQuery.insertFull(ToDoTaskEntity(-2L, taskName))
     }
 }

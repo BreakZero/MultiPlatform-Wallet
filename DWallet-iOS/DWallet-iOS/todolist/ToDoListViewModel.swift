@@ -15,7 +15,6 @@ class ToDoListViewModel: ObservableObject {
     @Published var todoTasks = [ModelToDoTask]()
     
     init() {
-
         KoinManager.todoHelper.allToDoTask().subscribe(
             onEach: { result in
                 self.todoTasks = result as! [ModelToDoTask]
@@ -25,11 +24,4 @@ class ToDoListViewModel: ObservableObject {
                 
             })
     }
-    
-    //    init() {
-    //        KoinManager.shared.databaseWrapper().selectAllTask().collect(collector: Kotlinx_coroutines_coreFlowCollector) { error in
-    //
-    //        }
-    //    }
-    
 }
