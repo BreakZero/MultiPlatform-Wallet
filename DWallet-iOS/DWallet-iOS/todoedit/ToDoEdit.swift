@@ -23,7 +23,7 @@ struct ToDoEditScreen: View {
         VStack {
             TextEditor(text: $taskName)
             Button {
-//                editViewModel.addTask(taskName: taskName)
+                editViewModel.addTask(taskName: taskName)
                 dismiss()
             } label: {
                 Text("Add Task")

@@ -1,11 +1,15 @@
 CREATE TABLE ToDoTaskEntity(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    taskName TEXT NOT NULL
+    taskName TEXT NOT NULL,
+    color INTEGER NOT NULL,
+    duration INTEGER NOT NULL,
+    start INTEGER NOT NULL,
+    state INTEGER NOT NULL
 );
 
 selectAllTask:
 SELECT * FROM ToDoTaskEntity;
 
 insertFull:
-INSERT INTO ToDoTaskEntity(id, taskName) VALUES ?;
+INSERT INTO ToDoTaskEntity(taskName, color, duration, start, state) VALUES ?;
 

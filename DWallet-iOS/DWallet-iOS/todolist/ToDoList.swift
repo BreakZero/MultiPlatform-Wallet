@@ -17,6 +17,12 @@ struct ToDoListScreen: View {
             VStack {
                 TopBar(items: ["Category1", "Category2", "Category3"]).padding([.leading, .trailing], 16)
                 
+                HStack {
+                    Text("Task")
+                        .bold()
+                    Spacer()
+                    Text("Today")
+                }
                 List(todoListViewModel.todoTasks, id: \.self.id) { task in
                     NavigationLink {
                         ToDoEditScreen(taskName: task.name)

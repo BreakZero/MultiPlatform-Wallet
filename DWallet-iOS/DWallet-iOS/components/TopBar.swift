@@ -32,7 +32,7 @@ struct TopBar: View {
                 Label(
                     selectedItem, systemImage: ""
                 ).labelStyle(TrailingIconLabelStyle())
-            }.frame(maxWidth: .infinity)
+            }.border(.blue).frame(maxWidth: .infinity)
             NavigationLink {
                 ToDoEditScreen(taskName: "")
             } label: {

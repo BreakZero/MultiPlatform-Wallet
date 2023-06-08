@@ -5,6 +5,7 @@ import com.easy.core.common.utils.KotlinNativeFlowWrapper
 import com.easy.core.common.utils.SuspendWrapper
 import com.easy.core.database.DatabaseDriverFactory
 import com.easy.core.database.DatabaseWrapper
+import com.easy.model.ToDoTask
 import com.easy.wallet.DWallet
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,7 +26,7 @@ class ToDoHelper: KoinComponent {
 
     fun allToDoTask() = KotlinNativeFlowWrapper(databaseWrapper.selectAllTask())
 
-    suspend fun insertTask(taskName: String) = databaseWrapper.insert(taskName)
+    suspend fun insertTask(todoTask: ToDoTask) = databaseWrapper.insert(todoTask)
 }
 
 val iosScope: CoroutineScope = object : CoroutineScope {

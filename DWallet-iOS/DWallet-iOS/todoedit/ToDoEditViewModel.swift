@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import common
 
 @MainActor
 class ToDoEditViewModel: ObservableObject {
@@ -15,8 +16,11 @@ class ToDoEditViewModel: ObservableObject {
     }
     
     func addTask(taskName: String) {
-        KoinManager.todoHelper.insertTask(taskName: taskName, completionHandler: {error in
-            
+        let task: ModelToDoTask = ModelToDoTask(id: -1, name: taskName, color: 0xff123456, duration: 24, start: 12, state: false)
+        print(task)
+        print(taskName)
+        KoinManager.todoHelper.insertTask(todoTask: task, completionHandler: {error in
+            print(error ?? "insert successful")
         })
     }
 }
