@@ -53,4 +53,5 @@ dependencies {
     implementation(libs.coil.kt.svg)
 
     implementation(libs.koin.android)
+    implementation(libs.koin.compose)
 }

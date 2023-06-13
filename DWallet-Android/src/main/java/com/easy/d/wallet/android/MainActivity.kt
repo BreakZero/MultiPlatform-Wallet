@@ -4,38 +4,40 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.easy.wallet.DWallet
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
+import com.easy.d.wallet.android.sign_in.SignIn
+import com.easy.d.wallet.android.sign_in.SignInRoute
+import com.easy.d.wallet.android.todo.ToDoTaskList
+import com.easy.d.wallet.android.todo.navigateToTaskList
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val greeting = DWallet()
         setContent {
             MyApplicationTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingView(greeting.currWallet().mnemonic)
+                    val navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = SignInRoute) {
+                        SignIn(
+                            signIn = {
+                                navController.navigateToTaskList()
+                            },
+                            signInWithGoogle = {}
+                        )
+                        ToDoTaskList(
+                            onItemClick = {},
+                            onAddTask = {}
+                        )
+                    }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun GreetingView(text: String) {
-    Text(text = text)
-}
-
-@Preview
-@Composable
-fun DefaultPreview() {
-    MyApplicationTheme {
-        GreetingView("Hello, Android!")
     }
 }
