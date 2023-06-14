@@ -21,12 +21,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.easy.d.wallet.android.R
 import com.easy.d.wallet.android.components.TodoTopBar
+import com.easy.model.UserProfile
 
 
 @Composable
 fun SettingsScreen(
     uiState: ProfileUiState,
-    logout: () -> Unit
+    onLogout: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -50,12 +51,12 @@ fun SettingsScreen(
         ProfileInformation(
             modifier = Modifier.height(48.dp),
             label = "Full Name",
-            value = "Dougie Lu"
+            value = uiState.userProfile.fullName
         )
         ProfileInformation(
             modifier = Modifier.height(48.dp),
             label = "Email",
-            value = "dejin.po@gmail.com"
+            value = uiState.userProfile.email
         )
         ProfileInformation(
             modifier = Modifier.height(48.dp),
@@ -64,8 +65,10 @@ fun SettingsScreen(
         )
         Spacer(modifier = Modifier.height(24.dp))
         Button(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
-            onClick = { /*TODO*/ }
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
+            onClick = onLogout
         ) {
             Text("LOG OUT")
         }
@@ -80,7 +83,9 @@ private fun ProfileInformation(
     value: String
 ) {
     Row(
-        modifier = modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
@@ -112,7 +117,7 @@ fun ProfileInformationPreview() {
 @Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
 @Composable
 fun SettingsPreview() {
-    SettingsScreen(uiState = ProfileUiState("")) {
+    SettingsScreen(uiState = ProfileUiState(UserProfile.EMPTY)) {
 
     }
 }

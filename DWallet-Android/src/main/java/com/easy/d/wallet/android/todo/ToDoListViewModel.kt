@@ -1,7 +1,7 @@
 package com.easy.d.wallet.android.todo
 
 import androidx.lifecycle.ViewModel
-import com.easy.model.ToDoTask
+import com.easy.model.TODOTask
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -14,13 +14,13 @@ class ToDoListViewModel : ViewModel() {
         _uiState.update {
             ToDoListUiState(
                 (1..12).map {
-                    ToDoTask(
+                    TODOTask(
                         id = it.toLong(),
-                        name = "Design Logo $it",
-                        color = 0xFF123321L,
-                        duration = 0L,
-                        start = it.toLong(),
-                        state = true
+                        title = "Design Logo",
+                        accentColor = 0xFF123321L,
+                        description = "",
+                        deadline = 0x111L,
+                        createAt = 0x111L
                     )
                 }
             )
@@ -29,5 +29,5 @@ class ToDoListViewModel : ViewModel() {
 }
 
 data class ToDoListUiState(
-    val todoList: List<ToDoTask>
+    val todoList: List<TODOTask>
 )

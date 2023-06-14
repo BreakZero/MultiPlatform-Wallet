@@ -6,7 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import com.easy.model.ToDoTask
+import com.easy.model.TODOTask
 import org.koin.androidx.compose.koinViewModel
 
 const val ToDoListRoute = "todo_task_list"
@@ -17,7 +17,7 @@ fun NavController.navigateToTaskList(navOptions: NavOptions? = null) {
 
 fun NavGraphBuilder.bindToDoTaskListGraph(
     onSettingsClick: () -> Unit,
-    onItemClick: (ToDoTask) -> Unit,
+    onItemClick: (TODOTask) -> Unit,
     onAddTask: () -> Unit
 ) {
     composable(route = ToDoListRoute) {

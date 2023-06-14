@@ -30,13 +30,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.easy.d.wallet.android.R
 import com.easy.d.wallet.android.components.TodoTopBar
-import com.easy.model.ToDoTask
+import com.easy.model.TODOTask
 
 @Composable
 fun ToDoListScreen(
     listUiState: ToDoListUiState,
     onSettingsClick: () -> Unit,
-    onItemClick: (ToDoTask) -> Unit,
+    onItemClick: (TODOTask) -> Unit,
     onAddTask: () -> Unit
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
@@ -116,8 +116,8 @@ private fun ToDoListFilter(
 @Composable
 private fun ToDoItemView(
     modifier: Modifier = Modifier,
-    onItemClick: (ToDoTask) -> Unit,
-    toDoTask: ToDoTask
+    onItemClick: (TODOTask) -> Unit,
+    toDoTask: TODOTask
 ) {
     Card(
         modifier = modifier.clickable { onItemClick(toDoTask) },
@@ -134,13 +134,13 @@ private fun ToDoItemView(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = toDoTask.name,
+                    text = toDoTask.title,
                     fontSize = MaterialTheme.typography.titleMedium.fontSize,
                     fontWeight = MaterialTheme.typography.titleMedium.fontWeight,
                     fontFamily = MaterialTheme.typography.titleMedium.fontFamily,
                     color = MaterialTheme.colorScheme.onPrimary
                 )
-                if (toDoTask.state) {
+                if (toDoTask.inProgress()) {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_clock),
                         tint = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -149,14 +149,14 @@ private fun ToDoItemView(
                 }
             }
             Text(
-                text = toDoTask.name,
+                text = toDoTask.description,
                 fontSize = MaterialTheme.typography.bodyMedium.fontSize,
                 fontWeight = MaterialTheme.typography.bodyMedium.fontWeight,
                 fontFamily = MaterialTheme.typography.bodyMedium.fontFamily,
                 color = MaterialTheme.colorScheme.onPrimary
             )
             Text(
-                text = toDoTask.start.toString(),
+                text = toDoTask.createAt.toString(),
                 fontSize = MaterialTheme.typography.bodySmall.fontSize,
                 fontWeight = MaterialTheme.typography.bodySmall.fontWeight,
                 fontFamily = MaterialTheme.typography.bodySmall.fontFamily,
@@ -173,13 +173,13 @@ fun TaskItemViewPreview() {
     ToDoItemView(
         modifier = Modifier.fillMaxWidth(),
         onItemClick = {},
-        toDoTask = ToDoTask(
+        toDoTask = TODOTask(
             id = 0L,
-            name = "Design Logo",
-            color = 0xFF123321L,
-            duration = 0L,
-            start = 0L,
-            state = true
+            title = "Design Logo",
+            accentColor = 0xFF123321L,
+            description = "",
+            deadline = 0x111L,
+            createAt = 0x111L
         )
     )
 }
@@ -200,13 +200,13 @@ fun ToDoListPreview() {
     ToDoListScreen(
         listUiState = ToDoListUiState(
             (1..12).map {
-                ToDoTask(
+                TODOTask(
                     id = it.toLong(),
-                    name = "Design Logo $it",
-                    color = 0xFF123321L,
-                    duration = 0L,
-                    start = it.toLong(),
-                    state = true
+                    title = "Design Logo",
+                    accentColor = 0xFF123321L,
+                    description = "",
+                    deadline = 0x111L,
+                    createAt = 0x111L
                 )
             }
         ),

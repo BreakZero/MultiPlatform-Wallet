@@ -26,11 +26,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.easy.model.ToDoTask
+import com.easy.model.TODOTask
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -80,7 +79,7 @@ fun TaskDetailScreen(
                 fontSize = MaterialTheme.typography.titleLarge.fontSize,
                 fontWeight = MaterialTheme.typography.titleLarge.fontWeight,
                 fontFamily = MaterialTheme.typography.titleLarge.fontFamily,
-                text = uiState.task.name
+                text = uiState.task.title
             )
             Text(
                 modifier = Modifier
@@ -89,7 +88,7 @@ fun TaskDetailScreen(
                 fontSize = MaterialTheme.typography.bodyMedium.fontSize,
                 fontWeight = MaterialTheme.typography.bodyMedium.fontWeight,
                 fontFamily = MaterialTheme.typography.bodyMedium.fontFamily,
-                text = uiState.task.name
+                text = uiState.task.description
             )
             Text(
                 modifier = Modifier.fillMaxWidth(),
@@ -97,7 +96,7 @@ fun TaskDetailScreen(
                 fontSize = MaterialTheme.typography.bodySmall.fontSize,
                 fontWeight = MaterialTheme.typography.bodySmall.fontWeight,
                 fontFamily = MaterialTheme.typography.bodySmall.fontFamily,
-                text = "Created at ${uiState.task.start}"
+                text = "Created at ${uiState.task.createAt}"
             )
         }
     }
@@ -144,13 +143,13 @@ fun DetailActionBarPreview() {
 fun DetailPreview() {
     TaskDetailScreen(
         uiState = TaskDetailUiState(
-            task = ToDoTask(
+            task = TODOTask(
                 id = 0L,
-                name = "Design Logo",
-                color = 0xFF123321L,
-                duration = 0L,
-                start = 12L,
-                state = true
+                title = "Design Logo",
+                accentColor = 0xFF123321L,
+                description = "",
+                deadline = 0x111L,
+                createAt = 0x111L
             )
         )
     )

@@ -15,8 +15,7 @@ fun NavController.navigateToSignIn(navOptions: NavOptions? = null) {
 }
 
 fun NavGraphBuilder.bindSignInGraph(
-    signIn: () -> Unit,
-    signInWithGoogle: () -> Unit
+    toNext: () -> Unit
 ) {
     composable(route = SignInRoute) {
         val signInViewModel: SignInViewModel = koinViewModel()
@@ -25,8 +24,14 @@ fun NavGraphBuilder.bindSignInGraph(
             uiState = signInUiState,
             emailChanged = signInViewModel::emailChanged,
             passwordChanged = signInViewModel::passwordChanged,
-            signIn = signIn,
-            signInWithGoogle = signInWithGoogle
+            signIn = {
+                signInViewModel.signIn()
+                toNext()
+            },
+            signInWithGoogle = {
+                signInViewModel.signInWithGoogle()
+                toNext()
+            }
         )
     }
 }

@@ -3,7 +3,7 @@ package com.easy.d.wallet.android.detail
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.easy.d.wallet.android.decoder.StringDecoder
-import com.easy.model.ToDoTask
+import com.easy.model.TODOTask
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
@@ -16,13 +16,13 @@ class TaskDetailViewModel constructor(
     }
     private val _detailUiState = MutableStateFlow(
         TaskDetailUiState(
-            task = ToDoTask(
+            task = TODOTask(
                 id = 0L,
-                name = "Design Logo",
-                color = 0xFF123321L,
-                duration = 0L,
-                start = 12L,
-                state = true
+                title = "Design Logo",
+                accentColor = 0xFF123321L,
+                description = "",
+                deadline = 0x111L,
+                createAt = 0x111L
             )
         )
     )
@@ -31,6 +31,6 @@ class TaskDetailViewModel constructor(
 }
 
 data class TaskDetailUiState(
-    val task: ToDoTask,
+    val task: TODOTask,
     val errorMessage: String? = null
 )

@@ -1,15 +1,29 @@
-CREATE TABLE ToDoTaskEntity(
+CREATE TABLE TODOTaskEntity(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    taskName TEXT NOT NULL,
-    color INTEGER NOT NULL,
-    duration INTEGER NOT NULL,
-    start INTEGER NOT NULL,
-    state INTEGER NOT NULL
+    title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    accentColor INTEGER NOT NULL,
+    deadline INTEGER NOT NULL,
+    createAt INTEGER NOT NULL
 );
 
-selectAllTask:
-SELECT * FROM ToDoTaskEntity;
+CREATE TABLE UserInfoEntity(
+    uid INTEGER PRIMARY KEY NOT NULL,
+    fullName TEXT NOT NULL,
+    email TEXT NOT NULL,
+    password TEXT NOT NULL,
+    createAt INTEGER NOT NULL
+);
 
-insertFull:
-INSERT INTO ToDoTaskEntity(taskName, color, duration, start, state) VALUES ?;
+findAllTasks:
+SELECT * FROM TODOTaskEntity;
+
+insertTask:
+INSERT INTO TODOTaskEntity(title, description, accentColor, deadline, createAt) VALUES ?;
+
+findUser:
+SELECT * FROM UserInfoEntity LIMIT 1;
+
+insertUser:
+INSERT INTO UserInfoEntity(uid, fullName, email, password, createAt) VALUES ?;
 
