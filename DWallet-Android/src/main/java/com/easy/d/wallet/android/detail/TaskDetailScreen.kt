@@ -29,13 +29,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.easy.d.wallet.android.utils.toDate
 import com.easy.model.TODOTask
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskDetailScreen(
-    uiState: TaskDetailUiState
+    uiState: TaskDetailUiState,
+    onEdit: () -> Unit
 ) {
     val scaffoldState = rememberBottomSheetScaffoldState()
     val scope = rememberCoroutineScope()
@@ -70,9 +72,7 @@ fun TaskDetailScreen(
                         scaffoldState.bottomSheetState.expand()
                     }
                 },
-                onEdit = {
-
-                }
+                onEdit = onEdit
             )
             Text(
                 modifier = Modifier.fillMaxWidth(),
@@ -96,7 +96,7 @@ fun TaskDetailScreen(
                 fontSize = MaterialTheme.typography.bodySmall.fontSize,
                 fontWeight = MaterialTheme.typography.bodySmall.fontWeight,
                 fontFamily = MaterialTheme.typography.bodySmall.fontFamily,
-                text = "Created at ${uiState.task.createAt}"
+                text = "Created at ${uiState.task.createAt.toDate()}"
             )
         }
     }
@@ -151,6 +151,7 @@ fun DetailPreview() {
                 deadline = 0x111L,
                 createAt = 0x111L
             )
-        )
+        ),
+        {}
     )
 }

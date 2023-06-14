@@ -14,6 +14,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.easy.d.wallet.android.detail.bindTaskDetailGraph
 import com.easy.d.wallet.android.detail.navigateToTaskDetail
+import com.easy.d.wallet.android.edit.bindTaskEditGraph
+import com.easy.d.wallet.android.edit.navigateToEdit
 import com.easy.d.wallet.android.settings.bindSettingsGraph
 import com.easy.d.wallet.android.settings.navigateToSettings
 import com.easy.d.wallet.android.sign_in.SignInRoute
@@ -52,10 +54,13 @@ class MainActivity : ComponentActivity() {
                             onItemClick = {
                                 navController.navigateToTaskDetail(it.id)
                             },
-                            onAddTask = {}
+                            onAddTask = navController::navigateToEdit
                         )
                         bindSettingsGraph(onLogout = navController::popBackStack)
-                        bindTaskDetailGraph()
+                        bindTaskDetailGraph(
+                            onEdit = navController::navigateToEdit
+                        )
+                        bindTaskEditGraph(onSaved = navController::popBackStack)
                     }
                 }
             }

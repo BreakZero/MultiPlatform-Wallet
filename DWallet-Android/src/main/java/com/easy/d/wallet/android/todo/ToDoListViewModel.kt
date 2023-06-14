@@ -1,31 +1,23 @@
 package com.easy.d.wallet.android.todo
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.easy.core.database.DatabaseWrapper
 import com.easy.model.TODOTask
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 
-class ToDoListViewModel : ViewModel() {
-    private val _uiState = MutableStateFlow(ToDoListUiState(emptyList()))
-    val uiState = _uiState.asStateFlow()
-
-    init {
-        _uiState.update {
-            ToDoListUiState(
-                (1..12).map {
-                    TODOTask(
-                        id = it.toLong(),
-                        title = "Design Logo",
-                        accentColor = 0xFF123321L,
-                        description = "",
-                        deadline = 0x111L,
-                        createAt = 0x111L
-                    )
-                }
-            )
-        }
-    }
+class ToDoListViewModel(
+    databaseWrapper: DatabaseWrapper
+) : ViewModel() {
+    val uiState = databaseWrapper.findAllTasks().map {
+        ToDoListUiState(todoList = it)
+    }.stateIn(
+        viewModelScope, SharingStarted.WhileSubscribed(2000), ToDoListUiState(
+            emptyList()
+        )
+    )
 }
 
 data class ToDoListUiState(

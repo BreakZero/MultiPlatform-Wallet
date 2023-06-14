@@ -14,8 +14,12 @@ class DatabaseWrapper(databaseDriverFactory: DatabaseDriverFactory) {
     private val database = EasyDatabase(databaseDriverFactory.createDriver())
     private val queries = database.easyDatabaseQueries
 
-    fun selectAllTask() = queries.findAllTasks().asFlow().mapToList(Dispatchers.Default)
+    fun findAllTasks() = queries.findAllTasks().asFlow().mapToList(Dispatchers.Default)
         .map { it.map(TODOTaskEntity::toExternalModel) }
+
+    fun findTaskById(id: Long) = queries.findTaskById(id).asFlow().mapToOneOrNull(Dispatchers.Default).map {
+        it?.toExternalModel()
+    }
 
     suspend fun insertTask(todoTask: TODOTask) {
         queries.insertTask(todoTask.toEntity())

@@ -18,6 +18,9 @@ CREATE TABLE UserInfoEntity(
 findAllTasks:
 SELECT * FROM TODOTaskEntity;
 
+findTaskById:
+SELECT * FROM TODOTaskEntity WHERE id = ?;
+
 insertTask:
 INSERT INTO TODOTaskEntity(title, description, accentColor, deadline, createAt) VALUES ?;
 

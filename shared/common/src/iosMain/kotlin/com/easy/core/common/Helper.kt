@@ -21,7 +21,7 @@ class KoinHelper: KoinComponent {
 class ToDoHelper: KoinComponent {
     private val databaseWrapper: DatabaseWrapper by inject()
 
-    fun allToDoTask() = KotlinNativeFlowWrapper(databaseWrapper.selectAllTask())
+    fun allToDoTask() = KotlinNativeFlowWrapper(databaseWrapper.findAllTasks())
 
     suspend fun insertTask(todoTask: TODOTask) = databaseWrapper.insertTask(todoTask)
 }

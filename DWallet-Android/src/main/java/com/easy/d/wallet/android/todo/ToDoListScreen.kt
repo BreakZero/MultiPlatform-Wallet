@@ -30,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.easy.d.wallet.android.R
 import com.easy.d.wallet.android.components.TodoTopBar
+import com.easy.d.wallet.android.utils.toDate
 import com.easy.model.TODOTask
 
 @Composable
@@ -121,7 +122,7 @@ private fun ToDoItemView(
 ) {
     Card(
         modifier = modifier.clickable { onItemClick(toDoTask) },
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary)
+        colors = CardDefaults.cardColors(containerColor = Color(toDoTask.accentColor))
     ) {
         Column(
             modifier = Modifier
@@ -150,13 +151,14 @@ private fun ToDoItemView(
             }
             Text(
                 text = toDoTask.description,
+                maxLines = 3,
                 fontSize = MaterialTheme.typography.bodyMedium.fontSize,
                 fontWeight = MaterialTheme.typography.bodyMedium.fontWeight,
                 fontFamily = MaterialTheme.typography.bodyMedium.fontFamily,
                 color = MaterialTheme.colorScheme.onPrimary
             )
             Text(
-                text = toDoTask.createAt.toString(),
+                text = toDoTask.createAt.toDate(),
                 fontSize = MaterialTheme.typography.bodySmall.fontSize,
                 fontWeight = MaterialTheme.typography.bodySmall.fontWeight,
                 fontFamily = MaterialTheme.typography.bodySmall.fontFamily,

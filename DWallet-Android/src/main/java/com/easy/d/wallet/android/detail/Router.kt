@@ -27,7 +27,9 @@ fun NavController.navigateToTaskDetail(taskId: Long, navOptions: NavOptions? = n
     this.navigate("$TaskDetailRoute/$encodeTaskId", navOptions)
 }
 
-fun NavGraphBuilder.bindTaskDetailGraph() {
+fun NavGraphBuilder.bindTaskDetailGraph(
+    onEdit: () -> Unit
+) {
     composable(
         route = "$TaskDetailRoute/{$taskIdKey}",
         arguments = listOf(
@@ -36,6 +38,6 @@ fun NavGraphBuilder.bindTaskDetailGraph() {
     ) {
         val detailViewModel: TaskDetailViewModel = koinViewModel()
         val uiState by detailViewModel.detailUiState.collectAsStateWithLifecycle()
-        TaskDetailScreen(uiState = uiState)
+        TaskDetailScreen(uiState = uiState, onEdit = onEdit)
     }
 }

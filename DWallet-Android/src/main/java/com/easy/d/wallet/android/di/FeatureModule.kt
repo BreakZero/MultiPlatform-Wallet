@@ -4,6 +4,7 @@ import com.easy.d.wallet.android.MainViewModel
 import com.easy.d.wallet.android.decoder.StringDecoder
 import com.easy.d.wallet.android.decoder.UriDecoder
 import com.easy.d.wallet.android.detail.TaskDetailViewModel
+import com.easy.d.wallet.android.edit.TaskEditViewModel
 import com.easy.d.wallet.android.settings.SettingsViewModel
 import com.easy.d.wallet.android.sign_in.SignInViewModel
 import com.easy.d.wallet.android.todo.ToDoListViewModel
@@ -18,6 +19,7 @@ val featureModules = module {
     viewModelOf(::TaskDetailViewModel)
     viewModelOf(::SettingsViewModel)
     viewModelOf(::MainViewModel)
+    viewModelOf(::TaskEditViewModel)
 }
 
 val commonModule = module {
