@@ -30,17 +30,17 @@ class SignInViewModel(
     }
 
     fun signIn() {
-        viewModelScope.launch(Dispatchers.IO) {
-            databaseWrapper.insertUser(
-                UserProfile(
-                    uid = Random.nextLong(),
-                    fullName = "Dougie Lu",
-                    email = _signInUiState.value.email,
-                    password = _signInUiState.value.password,
-                    createAt = 0L
-                )
-            )
-        }
+//        viewModelScope.launch(Dispatchers.IO) {
+//            databaseWrapper.insertUser(
+//                UserProfile(
+//                    uid = Random.nextLong(),
+//                    fullName = "Dougie Lu",
+//                    email = _signInUiState.value.email,
+//                    password = _signInUiState.value.password,
+//                    createAt = 0L
+//                )
+//            )
+//        }
     }
 
     fun signInWithGoogle() {

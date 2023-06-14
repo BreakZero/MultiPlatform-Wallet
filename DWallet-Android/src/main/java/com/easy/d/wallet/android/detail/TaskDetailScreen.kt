@@ -37,7 +37,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun TaskDetailScreen(
     uiState: TaskDetailUiState,
-    onEdit: () -> Unit
+    onEdit: (Long) -> Unit,
+    popBack: () -> Unit
 ) {
     val scaffoldState = rememberBottomSheetScaffoldState()
     val scope = rememberCoroutineScope()
@@ -72,10 +73,13 @@ fun TaskDetailScreen(
                         scaffoldState.bottomSheetState.expand()
                     }
                 },
-                onEdit = onEdit
+                onEdit = { onEdit(uiState.task.id) },
+                onBack = popBack
             )
             Text(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
                 fontSize = MaterialTheme.typography.titleLarge.fontSize,
                 fontWeight = MaterialTheme.typography.titleLarge.fontWeight,
                 fontFamily = MaterialTheme.typography.titleLarge.fontFamily,
@@ -84,7 +88,8 @@ fun TaskDetailScreen(
             Text(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f),
+                    .weight(1f)
+                    .padding(horizontal = 16.dp, vertical = 8.dp),
                 fontSize = MaterialTheme.typography.bodyMedium.fontSize,
                 fontWeight = MaterialTheme.typography.bodyMedium.fontWeight,
                 fontFamily = MaterialTheme.typography.bodyMedium.fontFamily,
@@ -106,6 +111,7 @@ fun TaskDetailScreen(
 @Composable
 private fun DetailActionBar(
     modifier: Modifier = Modifier,
+    onBack: () -> Unit,
     onEdit: () -> Unit,
     onDelete: () -> Unit
 ) {
@@ -113,7 +119,7 @@ private fun DetailActionBar(
         modifier = modifier,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = onBack) {
             Icon(imageVector = Icons.Default.ArrowBackIosNew, contentDescription = null)
         }
         Row {
@@ -134,7 +140,7 @@ fun DetailActionBarPreview() {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        DetailActionBar(modifier = Modifier.fillMaxWidth(), {}, {})
+        DetailActionBar(modifier = Modifier.fillMaxWidth(), {}, {}, {})
     }
 }
 
@@ -152,6 +158,6 @@ fun DetailPreview() {
                 createAt = 0x111L
             )
         ),
-        {}
+        {}, {}
     )
 }

@@ -20,7 +20,6 @@ import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material3.Button
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
-import androidx.compose.material3.DisplayMode
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -50,10 +49,11 @@ fun TaskEditScreen(
     onDescriptionChanged: (String) -> Unit,
     onDeadlineChanged: (Long) -> Unit,
     onAccentColorChanged: (Long) -> Unit,
-    onSave: () -> Unit
+    onSave: () -> Unit,
+    popBack: () -> Unit
 ) {
     var showDatePicker by rememberSaveable { mutableStateOf(false) }
-    val datePickerState = rememberDatePickerState(initialDisplayMode = DisplayMode.Input)
+    val datePickerState = rememberDatePickerState()
     Box(modifier = Modifier.fillMaxWidth()) {
         if (showDatePicker) {
             DatePickerDialog(
@@ -79,68 +79,65 @@ fun TaskEditScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(
-                    color = MaterialTheme.colorScheme.background,
-                    shape = RoundedCornerShape(
-                        topStart = 16.0.dp,
-                        topEnd = 16.0.dp
-                    )
-                )
-                .padding(horizontal = 16.dp)
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                IconButton(onClick = { }) {
+                IconButton(onClick = popBack) {
                     Icon(imageVector = Icons.Default.ArrowBackIosNew, contentDescription = null)
                 }
             }
-            OutlinedTextField(
-                modifier = Modifier.fillMaxWidth(),
-                value = uiState.title,
-                onValueChange = onTitleChanged
-            )
-            Spacer(modifier = Modifier.height(12.dp))
-            OutlinedTextField(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f),
-                value = uiState.description,
-                onValueChange = onDescriptionChanged
-            )
-            Spacer(modifier = Modifier.height(12.dp))
-            OutlinedTextField(
-                modifier = Modifier.fillMaxWidth(),
-                value = uiState.deadline.toDate(),
-                onValueChange = {},
-                trailingIcon = {
-                    IconButton(onClick = {
-                        showDatePicker = true
-                    }) {
-                        Icon(imageVector = Icons.Default.AccessTime, contentDescription = null)
-                    }
-                }
-            )
-            Spacer(modifier = Modifier.height(12.dp))
-            ColorGroup(
-                modifier = Modifier.fillMaxWidth(),
-                colors = AccentColor.values().map { it.color },
-                selected = uiState.accentColor,
-                onSelected = onAccentColorChanged
-            )
-            Spacer(modifier = Modifier.height(12.dp))
-            Button(
-                modifier = Modifier.fillMaxWidth(),
-                onClick = {
-                    if (uiState.isValid()) {
-                        onSave()
-                    }
-                }
+            Column(
+                modifier = Modifier.weight(1f).padding(horizontal = 16.dp)
             ) {
-                Text(text = "ADD TODO")
+                OutlinedTextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    value = uiState.title,
+                    onValueChange = onTitleChanged
+                )
+                Spacer(modifier = Modifier.height(12.dp))
+                OutlinedTextField(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f),
+                    value = uiState.description,
+                    onValueChange = onDescriptionChanged
+                )
+                Spacer(modifier = Modifier.height(12.dp))
+                OutlinedTextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    value = uiState.deadline.toDate(),
+                    onValueChange = {},
+                    enabled = false,
+                    trailingIcon = {
+                        IconButton(onClick = {
+                            showDatePicker = true
+                        }) {
+                            Icon(imageVector = Icons.Default.AccessTime, contentDescription = null)
+                        }
+                    }
+                )
+                Spacer(modifier = Modifier.height(12.dp))
+                ColorGroup(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = AccentColor.values().map { it.color },
+                    selected = uiState.accentColor,
+                    onSelected = onAccentColorChanged
+                )
+                Spacer(modifier = Modifier.height(12.dp))
+                Button(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = {
+                        if (uiState.isValid()) {
+                            onSave()
+                        }
+                    }
+                ) {
+                    Text(text = "ADD TODO")
+                }
+                Spacer(modifier = Modifier.height(24.dp))
             }
-            Spacer(modifier = Modifier.height(24.dp))
         }
     }
 }
@@ -200,5 +197,5 @@ fun EditTaskPreview() {
         -1L, -1L
     ), {}, {},
         { _ -> },
-        {}, {})
+        {}, {}, {})
 }

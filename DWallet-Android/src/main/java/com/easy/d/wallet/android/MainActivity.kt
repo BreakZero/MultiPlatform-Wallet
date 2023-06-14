@@ -58,9 +58,13 @@ class MainActivity : ComponentActivity() {
                         )
                         bindSettingsGraph(onLogout = navController::popBackStack)
                         bindTaskDetailGraph(
-                            onEdit = navController::navigateToEdit
+                            onEdit = navController::navigateToEdit,
+                            popBack = navController::popBackStack
                         )
-                        bindTaskEditGraph(onSaved = navController::popBackStack)
+                        bindTaskEditGraph(
+                            onSaved = navController::popBackStack,
+                            popBack = navController::popBackStack
+                        )
                     }
                 }
             }

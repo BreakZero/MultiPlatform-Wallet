@@ -28,7 +28,8 @@ fun NavController.navigateToTaskDetail(taskId: Long, navOptions: NavOptions? = n
 }
 
 fun NavGraphBuilder.bindTaskDetailGraph(
-    onEdit: () -> Unit
+    onEdit: (Long) -> Unit,
+    popBack: () -> Unit
 ) {
     composable(
         route = "$TaskDetailRoute/{$taskIdKey}",
@@ -38,6 +39,6 @@ fun NavGraphBuilder.bindTaskDetailGraph(
     ) {
         val detailViewModel: TaskDetailViewModel = koinViewModel()
         val uiState by detailViewModel.detailUiState.collectAsStateWithLifecycle()
-        TaskDetailScreen(uiState = uiState, onEdit = onEdit)
+        TaskDetailScreen(uiState = uiState, onEdit = onEdit, popBack = popBack)
     }
 }
