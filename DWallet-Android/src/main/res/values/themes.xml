@@ -15,12 +15,12 @@
     <style name="Theme.Easy" parent="PlatformAdjusted.Theme.Easy" />
 
     <style name="NightAdjusted.Theme.Splash" parent="Theme.SplashScreen">
-        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
     </style>
 
     <style name="Theme.Easy.Splash" parent="NightAdjusted.Theme.Splash">
-<!--        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_nav_wallet</item>-->
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
         <item name="postSplashScreenTheme">@style/Theme.Easy</item>
     </style>
 </resources>

@@ -35,6 +35,7 @@ import com.easy.model.ToDoTask
 @Composable
 fun ToDoListScreen(
     listUiState: ToDoListUiState,
+    onSettingsClick: () -> Unit,
     onItemClick: (ToDoTask) -> Unit,
     onAddTask: () -> Unit
 ) {
@@ -44,8 +45,9 @@ fun ToDoListScreen(
                 modifier = Modifier
                     .height(58.dp)
                     .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
-                tint = MaterialTheme.colorScheme.primary
+                    .padding(start = 16.dp, end = 8.dp),
+                tint = MaterialTheme.colorScheme.primary,
+                onSettingsClick = onSettingsClick
             )
             LazyColumn(
                 modifier = Modifier
@@ -64,6 +66,7 @@ fun ToDoListScreen(
                 }) {
                     ToDoItemView(toDoTask = it, onItemClick = onItemClick)
                 }
+                item { Spacer(modifier = Modifier.height(24.dp)) }
             }
         }
         FloatingActionButton(
@@ -207,6 +210,7 @@ fun ToDoListPreview() {
                 )
             }
         ),
+        {},
         {},
         {}
     )

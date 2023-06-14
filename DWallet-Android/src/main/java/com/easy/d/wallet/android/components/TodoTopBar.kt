@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,7 +20,8 @@ import com.easy.d.wallet.android.R
 @Composable
 fun TodoTopBar(
     modifier: Modifier = Modifier,
-    tint: Color
+    tint: Color,
+    onSettingsClick: () -> Unit = {}
 ) {
     Row(
         modifier = modifier,
@@ -31,10 +33,12 @@ fun TodoTopBar(
             painter = painterResource(id = R.drawable.ic_todo_list),
             tint = tint
         )
-        Icon(
-            contentDescription = null,
-            painter = painterResource(id = R.drawable.ic_settings)
-        )
+        IconButton(onClick = onSettingsClick) {
+            Icon(
+                contentDescription = null,
+                painter = painterResource(id = R.drawable.ic_settings)
+            )
+        }
     }
 }
 
@@ -44,8 +48,9 @@ fun TopBarPreview() {
     TodoTopBar(
         modifier = Modifier
             .height(48.dp)
-            .padding(horizontal = 16.dp)
+            .padding(start = 16.dp, end = 8.dp)
             .fillMaxWidth(),
-        tint = MaterialTheme.colorScheme.primary
+        tint = MaterialTheme.colorScheme.primary,
+        onSettingsClick = {}
     )
 }

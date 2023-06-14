@@ -15,7 +15,8 @@ fun NavController.navigateToTaskList(navOptions: NavOptions? = null) {
     this.navigate(ToDoListRoute, navOptions)
 }
 
-fun NavGraphBuilder.ToDoTaskList(
+fun NavGraphBuilder.bindToDoTaskListGraph(
+    onSettingsClick: () -> Unit,
     onItemClick: (ToDoTask) -> Unit,
     onAddTask: () -> Unit
 ) {
@@ -25,7 +26,8 @@ fun NavGraphBuilder.ToDoTaskList(
         ToDoListScreen(
             listUiState = listUiState,
             onItemClick = onItemClick,
-            onAddTask = onAddTask
+            onAddTask = onAddTask,
+            onSettingsClick = onSettingsClick
         )
     }
 }
