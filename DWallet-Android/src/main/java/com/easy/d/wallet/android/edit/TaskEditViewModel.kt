@@ -8,7 +8,6 @@ import com.easy.d.wallet.android.decoder.StringDecoder
 import com.easy.d.wallet.android.detail.TaskArgs
 import com.easy.d.wallet.android.utils.AccentColor
 import com.easy.model.TODOTask
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.filterNotNull
@@ -30,7 +29,7 @@ class TaskEditViewModel(
             "",
             "",
             System.currentTimeMillis(),
-            AccentColor.GREEN.color
+            AccentColor.PRIMARY.color
         )
     )
 

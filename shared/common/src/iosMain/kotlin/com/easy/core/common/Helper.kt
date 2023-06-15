@@ -4,6 +4,7 @@ import com.easy.core.common.di.appModules
 import com.easy.core.common.utils.KotlinNativeFlowWrapper
 import com.easy.core.database.DatabaseWrapper
 import com.easy.model.TODOTask
+import com.easy.model.UserProfile
 import com.easy.wallet.DWallet
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -21,9 +22,15 @@ class KoinHelper: KoinComponent {
 class ToDoHelper: KoinComponent {
     private val databaseWrapper: DatabaseWrapper by inject()
 
-    fun allToDoTask() = KotlinNativeFlowWrapper(databaseWrapper.findAllTasks())
+    fun findAllTasks() = KotlinNativeFlowWrapper(databaseWrapper.findAllTasks())
+
+    fun findTaskById(id: Long) = KotlinNativeFlowWrapper(databaseWrapper.findTaskById(id))
 
     suspend fun insertTask(todoTask: TODOTask) = databaseWrapper.insertTask(todoTask)
+
+    suspend fun insertUser(user: UserProfile) = databaseWrapper.insertUser(user)
+
+    fun findUser() = KotlinNativeFlowWrapper(databaseWrapper.findUser())
 }
 
 val iosScope: CoroutineScope = object : CoroutineScope {

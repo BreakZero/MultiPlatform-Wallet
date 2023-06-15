@@ -16,7 +16,7 @@ class ToDoEditViewModel: ObservableObject {
     }
     
     func addTask(taskName: String) {
-        let task: ModelToDoTask = ModelToDoTask(id: -1, name: taskName, color: 0xff123456, duration: 24, start: 12, state: false)
+        let task: ModelTODOTask = ModelTODOTask(id: -1, title: "test", description: "desc", createAt: 1, deadline: 1, accentColor: 1)
         print(task)
         print(taskName)
         KoinManager.todoHelper.insertTask(todoTask: task, completionHandler: {error in

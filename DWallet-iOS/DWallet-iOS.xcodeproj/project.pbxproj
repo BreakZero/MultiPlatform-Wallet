@@ -10,11 +10,19 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
-		3C2506CE2A17504700ADEC46 /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2506CD2A17504700ADEC46 /* ToDoList.swift */; };
-		3C2506D22A1754E000ADEC46 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2506D12A1754E000ADEC46 /* TopBar.swift */; };
-		3C2506D42A17679A00ADEC46 /* ToDoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2506D32A17679A00ADEC46 /* ToDoListViewModel.swift */; };
 		3C2506D72A187B0E00ADEC46 /* ToDoEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2506D62A187B0E00ADEC46 /* ToDoEdit.swift */; };
 		3C2506D92A187B7D00ADEC46 /* ToDoEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2506D82A187B7D00ADEC46 /* ToDoEditViewModel.swift */; };
+		3C6191202A3ABFD400FFADA1 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C61911F2A3ABFD400FFADA1 /* SignInViewModel.swift */; };
+		3C6191222A3ABFE600FFADA1 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6191212A3ABFE600FFADA1 /* SignInScreen.swift */; };
+		3C6191252A3AF68000FFADA1 /* DateX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6191242A3AF68000FFADA1 /* DateX.swift */; };
+		3C6191292A3B067A00FFADA1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6191282A3B067A00FFADA1 /* UserManager.swift */; };
+		3C61912B2A3B08AA00FFADA1 /* AppTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C61912A2A3B08AA00FFADA1 /* AppTopBar.swift */; };
+		3C61912D2A3B0A1200FFADA1 /* TODOListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C61912C2A3B0A1200FFADA1 /* TODOListScreen.swift */; };
+		3C61912F2A3B1A6800FFADA1 /* ColorX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C61912E2A3B1A6800FFADA1 /* ColorX.swift */; };
+		3C6191322A3B1B2A00FFADA1 /* AccentColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6191312A3B1B2A00FFADA1 /* AccentColors.swift */; };
+		3C6191342A3B1BFF00FFADA1 /* TODOListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6191332A3B1BFF00FFADA1 /* TODOListViewModel.swift */; };
+		3C6191372A3B463000FFADA1 /* UserProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6191362A3B462F00FFADA1 /* UserProfileScreen.swift */; };
+		3C6191392A3B464100FFADA1 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6191382A3B464100FFADA1 /* UserProfileViewModel.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		9EF2DEA0E1B24FE0EA270D51 /* Pods_DWallet_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9FDEFEDB83608E56ACB267 /* Pods_DWallet_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -23,11 +31,19 @@
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
-		3C2506CD2A17504700ADEC46 /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
-		3C2506D12A1754E000ADEC46 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
-		3C2506D32A17679A00ADEC46 /* ToDoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewModel.swift; sourceTree = "<group>"; };
 		3C2506D62A187B0E00ADEC46 /* ToDoEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoEdit.swift; sourceTree = "<group>"; };
 		3C2506D82A187B7D00ADEC46 /* ToDoEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoEditViewModel.swift; sourceTree = "<group>"; };
+		3C61911F2A3ABFD400FFADA1 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		3C6191212A3ABFE600FFADA1 /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
+		3C6191242A3AF68000FFADA1 /* DateX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateX.swift; sourceTree = "<group>"; };
+		3C6191282A3B067A00FFADA1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		3C61912A2A3B08AA00FFADA1 /* AppTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTopBar.swift; sourceTree = "<group>"; };
+		3C61912C2A3B0A1200FFADA1 /* TODOListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOListScreen.swift; sourceTree = "<group>"; };
+		3C61912E2A3B1A6800FFADA1 /* ColorX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorX.swift; sourceTree = "<group>"; };
+		3C6191312A3B1B2A00FFADA1 /* AccentColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColors.swift; sourceTree = "<group>"; };
+		3C6191332A3B1BFF00FFADA1 /* TODOListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOListViewModel.swift; sourceTree = "<group>"; };
+		3C6191362A3B462F00FFADA1 /* UserProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileScreen.swift; sourceTree = "<group>"; };
+		3C6191382A3B464100FFADA1 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		42F68F059BB0F6B7EE2843AF /* Pods-DWallet-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DWallet-iOS.release.xcconfig"; path = "Target Support Files/Pods-DWallet-iOS/Pods-DWallet-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		4B9FDEFEDB83608E56ACB267 /* Pods_DWallet_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DWallet_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF7B242A565900829871 /* DWallet-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DWallet-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,8 +75,8 @@
 		3C2506CA2A174FF700ADEC46 /* todolist */ = {
 			isa = PBXGroup;
 			children = (
-				3C2506CD2A17504700ADEC46 /* ToDoList.swift */,
-				3C2506D32A17679A00ADEC46 /* ToDoListViewModel.swift */,
+				3C61912C2A3B0A1200FFADA1 /* TODOListScreen.swift */,
+				3C6191332A3B1BFF00FFADA1 /* TODOListViewModel.swift */,
 			);
 			path = todolist;
 			sourceTree = "<group>";
@@ -68,7 +84,7 @@
 		3C2506D02A1754CD00ADEC46 /* components */ = {
 			isa = PBXGroup;
 			children = (
-				3C2506D12A1754E000ADEC46 /* TopBar.swift */,
+				3C61912A2A3B08AA00FFADA1 /* AppTopBar.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -80,6 +96,41 @@
 				3C2506D82A187B7D00ADEC46 /* ToDoEditViewModel.swift */,
 			);
 			path = todoedit;
+			sourceTree = "<group>";
+		};
+		3C61911E2A3ABFB900FFADA1 /* sign_in */ = {
+			isa = PBXGroup;
+			children = (
+				3C61911F2A3ABFD400FFADA1 /* SignInViewModel.swift */,
+				3C6191212A3ABFE600FFADA1 /* SignInScreen.swift */,
+			);
+			path = sign_in;
+			sourceTree = "<group>";
+		};
+		3C6191232A3AF67100FFADA1 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C6191242A3AF68000FFADA1 /* DateX.swift */,
+				3C61912E2A3B1A6800FFADA1 /* ColorX.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		3C6191302A3B1AC200FFADA1 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				3C6191312A3B1B2A00FFADA1 /* AccentColors.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		3C6191352A3B25BA00FFADA1 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				3C6191362A3B462F00FFADA1 /* UserProfileScreen.swift */,
+				3C6191382A3B464100FFADA1 /* UserProfileViewModel.swift */,
+			);
+			path = settings;
 			sourceTree = "<group>";
 		};
 		72DA2380CC2A29BDB7E8E0DF /* Frameworks */ = {
@@ -111,6 +162,10 @@
 		7555FF7D242A565900829871 /* DWallet-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3C6191352A3B25BA00FFADA1 /* settings */,
+				3C6191302A3B1AC200FFADA1 /* utils */,
+				3C6191232A3AF67100FFADA1 /* extensions */,
+				3C61911E2A3ABFB900FFADA1 /* sign_in */,
 				3C2506D52A187ADB00ADEC46 /* todoedit */,
 				3C2506D02A1754CD00ADEC46 /* components */,
 				3C2506CA2A174FF700ADEC46 /* todolist */,
@@ -119,6 +174,7 @@
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				3C6191282A3B067A00FFADA1 /* UserManager.swift */,
 			);
 			path = "DWallet-iOS";
 			sourceTree = "<group>";
@@ -247,12 +303,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C6191372A3B463000FFADA1 /* UserProfileScreen.swift in Sources */,
+				3C6191392A3B464100FFADA1 /* UserProfileViewModel.swift in Sources */,
+				3C6191342A3B1BFF00FFADA1 /* TODOListViewModel.swift in Sources */,
+				3C6191252A3AF68000FFADA1 /* DateX.swift in Sources */,
 				3C2506D92A187B7D00ADEC46 /* ToDoEditViewModel.swift in Sources */,
+				3C6191322A3B1B2A00FFADA1 /* AccentColors.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
-				3C2506CE2A17504700ADEC46 /* ToDoList.swift in Sources */,
+				3C61912B2A3B08AA00FFADA1 /* AppTopBar.swift in Sources */,
+				3C6191222A3ABFE600FFADA1 /* SignInScreen.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
-				3C2506D22A1754E000ADEC46 /* TopBar.swift in Sources */,
-				3C2506D42A17679A00ADEC46 /* ToDoListViewModel.swift in Sources */,
+				3C6191202A3ABFD400FFADA1 /* SignInViewModel.swift in Sources */,
+				3C61912F2A3B1A6800FFADA1 /* ColorX.swift in Sources */,
+				3C6191292A3B067A00FFADA1 /* UserManager.swift in Sources */,
+				3C61912D2A3B0A1200FFADA1 /* TODOListScreen.swift in Sources */,
 				3C2506D72A187B0E00ADEC46 /* ToDoEdit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

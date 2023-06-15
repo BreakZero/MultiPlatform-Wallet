@@ -1,6 +1,6 @@
 package com.easy.d.wallet.android.utils
 
 enum class AccentColor(val color: Long) {
-    GREEN(0xFF122388), COLOR1(0xFF122322),
-    COLOR2(0xFF126622)
+    PRIMARY(0xFFF79E89), SECONDARY(0xFFF76C6A),
+    TERTIARY(0xFFF58B70)
 }

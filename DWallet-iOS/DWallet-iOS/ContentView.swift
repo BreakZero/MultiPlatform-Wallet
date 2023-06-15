@@ -2,18 +2,21 @@ import SwiftUI
 import common
 
 struct ContentView: View {
-    var wallet = KoinManager.shared.wallet().currWallet()
+    @EnvironmentObject var userManager: UserManager
 	var body: some View {
-        VStack {
-            Text("Hello")
-            Spacer()
-            Text(wallet.mnemonic)
+        Group {
+            if userManager.loggedUser != nil {
+                TODOListScreen()
+            }
+            else {
+                SignInScreen()
+            }
         }
 	}
 }
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView()
+        ContentView().environmentObject(UserManager.shared)
 	}
 }

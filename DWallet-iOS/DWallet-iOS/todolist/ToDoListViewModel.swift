@@ -1,8 +1,8 @@
 //
-//  ToDoListViewModel.swift
+//  TODOListViewModel.swift
 //  DWallet-iOS
 //
-//  Created by Jin on 2023/5/19.
+//  Created by Jin on 2023/6/15.
 //  Copyright © 2023 orgName. All rights reserved.
 //
 
@@ -11,17 +11,23 @@ import SwiftUI
 import common
 
 @MainActor
-class ToDoListViewModel: ObservableObject {
-    @Published var todoTasks = [ModelToDoTask]()
+class TODOListViewModel: ObservableObject {
+    @Published var tasks: [ModelTODOTask] = []
     
     init() {
-        KoinManager.todoHelper.allToDoTask().subscribe(
-            onEach: { result in
-                self.todoTasks = result as! [ModelToDoTask]
-            },
-            onComplete: {},
-            onThrow: {error in
-                
-            })
+//        KoinManager.todoHelper.findAllTasks()
+//            .subscribe(
+//                onEach: { tasks ->
+//                    self.tasks = tasks
+//                },
+//                onComplete: {},
+//                onThrow: {error in
+//
+//                })
+        tasks = [
+            ModelTODOTask(id: 1, title: "Title1", description: "description", createAt: 10000, deadline: 100000, accentColor: 0xFFF79E89),
+            ModelTODOTask(id: 2, title: "Title2", description: "description", createAt: 10000, deadline: 100000, accentColor: 0xFFF76C6A),
+            ModelTODOTask(id: 3, title: "Title3", description: "description", createAt: 10000, deadline: 100000, accentColor: 0xFFF58B70)
+        ]
     }
 }

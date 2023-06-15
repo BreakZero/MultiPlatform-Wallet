@@ -58,7 +58,11 @@ fun TaskDetailScreen(
                     Text(text = "Delete TODO")
                 }
                 Button(
-                    modifier = Modifier.fillMaxWidth(), onClick = { /*TODO*/ }) {
+                    modifier = Modifier.fillMaxWidth(), onClick = {
+                        scope.launch {
+                            scaffoldState.bottomSheetState.hide()
+                        }
+                    }) {
                     Text(text = "Cancel")
                 }
                 Spacer(modifier = Modifier.height(32.dp))
