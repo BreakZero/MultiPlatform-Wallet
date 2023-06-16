@@ -9,18 +9,19 @@
 import SwiftUI
 
 struct UserProfileScreen: View {
+    @ObservedObject var profileViewModel: UserProfileViewModel = UserProfileViewModel()
     var body: some View {
         VStack {
             Spacer()
             Image("rafiki")
             Spacer()
-            ProfileInfoItemView(key: "Full Name", value: "Dougie Lu")
+            ProfileInfoItemView(key: "Full Name", value: profileViewModel.userProfile?.fullName ?? "")
                 .padding(.horizontal, 16)
                 .padding(.vertical, 4)
-            ProfileInfoItemView(key: "Email", value: "527916577@qq.com")
+            ProfileInfoItemView(key: "Email", value: profileViewModel.userProfile?.email ?? "")
                 .padding(.horizontal, 16)
                 .padding(.vertical, 4)
-            ProfileInfoItemView(key: "Password", value: "******")
+            ProfileInfoItemView(key: "Password", value: "Change Password")
                 .padding(.horizontal, 16)
                 .padding(.vertical, 4)
             

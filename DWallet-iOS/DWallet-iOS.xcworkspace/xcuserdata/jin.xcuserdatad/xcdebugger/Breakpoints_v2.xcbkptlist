@@ -20,5 +20,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56596E83-0668-4878-B2B5-A19FFE309385"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DWallet-iOS/todolist/TODOListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "56596E83-0668-4878-B2B5-A19FFE309385 - 3f0f19845f47612"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DWallet_iOS.TODOListViewModel.init() -&gt; DWallet_iOS.TODOListViewModel"
+                  moduleName = "DWallet-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jin/OtherProjects/D-Wallet/DWallet-iOS/DWallet-iOS/todolist/TODOListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "56596E83-0668-4878-B2B5-A19FFE309385 - 3f0f19845f47769"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DWallet_iOS.TODOListViewModel.init() -&gt; DWallet_iOS.TODOListViewModel"
+                  moduleName = "DWallet-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jin/OtherProjects/D-Wallet/DWallet-iOS/DWallet-iOS/todolist/TODOListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "623">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@available(iOS 16.0, *)
 struct SignInScreen: View {
     @State private var signInSuccessful = false
     
@@ -53,6 +54,7 @@ struct SignInScreen: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct SignInScreen_Previews: PreviewProvider {
     static var previews: some View {
         SignInScreen()

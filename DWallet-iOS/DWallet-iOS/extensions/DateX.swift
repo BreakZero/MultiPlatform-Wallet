@@ -8,8 +8,15 @@
 
 import Foundation
 
+private let dateFormatter = DateFormatter()
+
 extension Date {
+    
     func toMillis() -> Int64! {
         return Int64(self.timeIntervalSince1970 * 1000)
+    }
+    
+    func formatToString(format: String = "HH:mm E, d MMM y") -> String {
+        return dateFormatter.string(from: self)
     }
 }

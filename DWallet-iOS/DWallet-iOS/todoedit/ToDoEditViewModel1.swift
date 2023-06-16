@@ -11,7 +11,7 @@ import SwiftUI
 import common
 
 @MainActor
-class ToDoEditViewModel: ObservableObject {
+class ToDoEditViewModel1: ObservableObject {
     init() {
     }
     

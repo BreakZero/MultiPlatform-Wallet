@@ -9,29 +9,37 @@
 import SwiftUI
 import common
 
+@available(iOS 16.0, *)
 struct TODOListScreen: View {
     @ObservedObject var listViewModel: TODOListViewModel = TODOListViewModel()
-    @State var toSettiings: String?
+    @State private var showAdd: Bool = false
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-                AppTopBar(destination: {
-                    UserProfileScreen()
-                })
-                FilterView()
-                List(listViewModel.tasks, id: \.self.id) { task in
-                    ZStack {
-                        NavigationLink(destination: Text(task.title), label: {
-                            EmptyView()
-                        }).listStyle(.inset).opacity(0.0)
-                        TaskItemView(task: task)
-                    }.listRowInsets(EdgeInsets())
-                        .listRowBackground(EmptyView())
-                        .listRowSeparator(.hidden)
-                }.listStyle(.inset)
+            ZStack {
+                VStack(alignment: .leading) {
+                    AppTopBar(destination: {
+                        UserProfileScreen()
+                    })
+                    FilterView()
+                    List(listViewModel.tasks, id: \.self.id) { task in
+                        ZStack {
+                            NavigationLink(destination: Text(task.title), label: {
+                                EmptyView()
+                            }).listStyle(.inset).opacity(0.0)
+                            TaskItemView(task: task)
+                        }.listRowInsets(EdgeInsets())
+                            .listRowBackground(EmptyView())
+                            .listRowSeparator(.hidden)
+                    }.listStyle(.inset)
 
-                Spacer()
-            }
+                    Spacer()
+                }
+                FloatingActionButton(action: {
+                    showAdd = true
+                }, icon: "plus")
+            }.sheet(isPresented: $showAdd, content: {
+                TODOEditScreen()
+            })
         }
     }
 }
@@ -59,12 +67,14 @@ struct TaskItemView: View {
                     .font(.system(size: 24))
                     .bold()
                     .foregroundColor(Color.white)
+                    .lineLimit(1)
                 Spacer()
             }
             Text(task.description_).frame(maxWidth: .infinity, alignment: .leading)
                 .font(.system(size: 22))
                 .padding(.vertical, 2)
                 .foregroundColor(Color.white)
+                .lineLimit(3)
             Text(task.deadline.description)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundColor(Color.white)
@@ -83,6 +93,7 @@ struct TODOTask_Previews: PreviewProvider {
     }
 }
 
+@available(iOS 16.0, *)
 struct TODOListScreen_Previews: PreviewProvider {
     static var previews: some View {
         TODOListScreen()
