@@ -23,7 +23,7 @@ struct TODOListScreen: View {
                     FilterView()
                     List(listViewModel.tasks, id: \.self.id) { task in
                         ZStack {
-                            NavigationLink(destination: Text(task.title), label: {
+                            NavigationLink(destination: TaskDetailScreen(taskId: task.id), label: {
                                 EmptyView()
                             }).listStyle(.inset).opacity(0.0)
                             TaskItemView(task: task)
@@ -31,7 +31,7 @@ struct TODOListScreen: View {
                             .listRowBackground(EmptyView())
                             .listRowSeparator(.hidden)
                     }.listStyle(.inset)
-
+                    
                     Spacer()
                 }
                 FloatingActionButton(action: {

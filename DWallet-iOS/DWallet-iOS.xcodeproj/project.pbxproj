@@ -13,6 +13,8 @@
 		3C0510C82A3BF54400BF9C82 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0510C72A3BF54400BF9C82 /* FloatingActionButton.swift */; };
 		3C0510CA2A3BF7D400BF9C82 /* TODOEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0510C92A3BF7D400BF9C82 /* TODOEditScreen.swift */; };
 		3C0510CC2A3BF80600BF9C82 /* TODOEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0510CB2A3BF80600BF9C82 /* TODOEditViewModel.swift */; };
+		3C0510CF2A3C3C2500BF9C82 /* TaskDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0510CE2A3C3C2500BF9C82 /* TaskDetailScreen.swift */; };
+		3C0510D12A3C3C3400BF9C82 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0510D02A3C3C3400BF9C82 /* TaskDetailViewModel.swift */; };
 		3C6191202A3ABFD400FFADA1 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C61911F2A3ABFD400FFADA1 /* SignInViewModel.swift */; };
 		3C6191222A3ABFE600FFADA1 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6191212A3ABFE600FFADA1 /* SignInScreen.swift */; };
 		3C6191252A3AF68000FFADA1 /* DateX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6191242A3AF68000FFADA1 /* DateX.swift */; };
@@ -35,6 +37,8 @@
 		3C0510C72A3BF54400BF9C82 /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		3C0510C92A3BF7D400BF9C82 /* TODOEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOEditScreen.swift; sourceTree = "<group>"; };
 		3C0510CB2A3BF80600BF9C82 /* TODOEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOEditViewModel.swift; sourceTree = "<group>"; };
+		3C0510CE2A3C3C2500BF9C82 /* TaskDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailScreen.swift; sourceTree = "<group>"; };
+		3C0510D02A3C3C3400BF9C82 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
 		3C61911F2A3ABFD400FFADA1 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		3C6191212A3ABFE600FFADA1 /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
 		3C6191242A3AF68000FFADA1 /* DateX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateX.swift; sourceTree = "<group>"; };
@@ -72,6 +76,15 @@
 				058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3C0510CD2A3C3BF300BF9C82 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				3C0510CE2A3C3C2500BF9C82 /* TaskDetailScreen.swift */,
+				3C0510D02A3C3C3400BF9C82 /* TaskDetailViewModel.swift */,
+			);
+			path = detail;
 			sourceTree = "<group>";
 		};
 		3C2506CA2A174FF700ADEC46 /* todolist */ = {
@@ -165,6 +178,7 @@
 		7555FF7D242A565900829871 /* DWallet-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3C0510CD2A3C3BF300BF9C82 /* detail */,
 				3C6191352A3B25BA00FFADA1 /* settings */,
 				3C6191302A3B1AC200FFADA1 /* utils */,
 				3C6191232A3AF67100FFADA1 /* extensions */,
@@ -314,9 +328,11 @@
 				3C6191252A3AF68000FFADA1 /* DateX.swift in Sources */,
 				3C6191322A3B1B2A00FFADA1 /* AccentColors.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				3C0510D12A3C3C3400BF9C82 /* TaskDetailViewModel.swift in Sources */,
 				3C61912B2A3B08AA00FFADA1 /* AppTopBar.swift in Sources */,
 				3C6191222A3ABFE600FFADA1 /* SignInScreen.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				3C0510CF2A3C3C2500BF9C82 /* TaskDetailScreen.swift in Sources */,
 				3C6191202A3ABFD400FFADA1 /* SignInViewModel.swift in Sources */,
 				3C61912F2A3B1A6800FFADA1 /* ColorX.swift in Sources */,
 				3C0510CC2A3BF80600BF9C82 /* TODOEditViewModel.swift in Sources */,
