@@ -17,7 +17,6 @@
 				6ACB05D4FC2AE7131A2F21043872CA02 /* PBXTargetDependency */,
 			);
 			name = common;
-			productName = common;
 		};
 /* End PBXAggregateTarget section */
 
@@ -620,7 +619,7 @@
 		89115E397FA5AEFF304FAFD997C01D3C /* NEO+Proto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NEO+Proto.swift"; path = "Sources/Generated/Protobuf/NEO+Proto.swift"; sourceTree = "<group>"; };
 		8B26148508506A87BC11894561A3743A /* Message+AnyAdditions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Message+AnyAdditions.swift"; path = "Sources/SwiftProtobuf/Message+AnyAdditions.swift"; sourceTree = "<group>"; };
 		8B46B5AF0AC64159B8591B4989990953 /* Algorand.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Algorand.pb.swift; path = Sources/Generated/Protobuf/Algorand.pb.swift; sourceTree = "<group>"; };
-		8C3AFA30F8655B7B5E6D3F53B795AA80 /* WalletCoreCommon.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = WalletCoreCommon.xcframework; sourceTree = "<group>"; };
+		8C3AFA30F8655B7B5E6D3F53B795AA80 /* WalletCoreCommon.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = WalletCoreCommon.xcframework; sourceTree = "<group>"; };
 		8DD6EC87164D03FA2710C3257BB35755 /* Oasis+Proto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Oasis+Proto.swift"; path = "Sources/Generated/Protobuf/Oasis+Proto.swift"; sourceTree = "<group>"; };
 		8DFCC934E5B0AF87B081221D550FC7BE /* TWNebulasProto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWNebulasProto.h; path = include/TrustWalletCore/TWNebulasProto.h; sourceTree = "<group>"; };
 		8E974699CEA8A063B8876436F7BEDB9A /* Binance+Proto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Binance+Proto.swift"; path = "Sources/Generated/Protobuf/Binance+Proto.swift"; sourceTree = "<group>"; };
@@ -630,8 +629,8 @@
 		9298F07792B04B20BEC6B4F1101BFD76 /* TWEthereumAbiFunction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWEthereumAbiFunction.h; path = include/TrustWalletCore/TWEthereumAbiFunction.h; sourceTree = "<group>"; };
 		932E2EF38F1C7E000BF094DC09A6A994 /* TWStellarPassphrase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWStellarPassphrase.h; path = include/TrustWalletCore/TWStellarPassphrase.h; sourceTree = "<group>"; };
 		93477ED41E8F9F7EEFAA5F4200B83F34 /* Solana+Proto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Solana+Proto.swift"; path = "Sources/Generated/Protobuf/Solana+Proto.swift"; sourceTree = "<group>"; };
-		943D347E61A2E181A4FA2CA894307B6E /* SwiftProtobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftProtobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95BB2094DC34A58512EE96D97F1C789A /* WalletCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WalletCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		943D347E61A2E181A4FA2CA894307B6E /* SwiftProtobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftProtobuf.framework; path = SwiftProtobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95BB2094DC34A58512EE96D97F1C789A /* WalletCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WalletCore.framework; path = TrustWalletCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DEA03A7F0A3392E1B25A6DA153DB8A /* HRP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HRP.swift; path = Sources/Generated/Enums/HRP.swift; sourceTree = "<group>"; };
 		9615DAF50F7F016796CA6367A53B1274 /* Decred.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Decred.pb.swift; path = Sources/Generated/Protobuf/Decred.pb.swift; sourceTree = "<group>"; };
 		97DBDCFC340D06BF4AB938E6FE7A8F97 /* Mnemonic+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Mnemonic+Extension.swift"; path = "Sources/Extensions/Mnemonic+Extension.swift"; sourceTree = "<group>"; };
@@ -645,7 +644,7 @@
 		9C2D4183958B202E07C9AE3F1F6DBD8E /* Message+BinaryAdditions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Message+BinaryAdditions.swift"; path = "Sources/SwiftProtobuf/Message+BinaryAdditions.swift"; sourceTree = "<group>"; };
 		9CDC2034E09AE3E99DDED123C6986FE1 /* TWAptosProto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWAptosProto.h; path = include/TrustWalletCore/TWAptosProto.h; sourceTree = "<group>"; };
 		9D28A56A5FA64EC89D64055823FDC0F1 /* TWZilliqaProto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWZilliqaProto.h; path = include/TrustWalletCore/TWZilliqaProto.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D9E5E8A6C1275C9045AE6BE50E77586 /* TWMnemonic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWMnemonic.h; path = include/TrustWalletCore/TWMnemonic.h; sourceTree = "<group>"; };
 		9DF8DAFF4611D554F12B094D9BE44BD8 /* TWOasisProto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWOasisProto.h; path = include/TrustWalletCore/TWOasisProto.h; sourceTree = "<group>"; };
 		A03B65E051B12AC5E54832EDBEC9DB0D /* FieldTag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FieldTag.swift; path = Sources/SwiftProtobuf/FieldTag.swift; sourceTree = "<group>"; };
@@ -697,7 +696,7 @@
 		BEA851C3B5C4E1B5D2060F6E102DA8C3 /* BinaryDecodingOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryDecodingOptions.swift; path = Sources/SwiftProtobuf/BinaryDecodingOptions.swift; sourceTree = "<group>"; };
 		BF29079E9C695002B81DD3B9AFEA1587 /* TrustWalletCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TrustWalletCore.debug.xcconfig; sourceTree = "<group>"; };
 		BF59EF621EEF36C6879E3437F175EC4B /* TWStoredKey.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWStoredKey.h; path = include/TrustWalletCore/TWStoredKey.h; sourceTree = "<group>"; };
-		BFA52BB6649946324B7434347A3EF9DA /* Pods_DWallet_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DWallet_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFA52BB6649946324B7434347A3EF9DA /* Pods_DWallet_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DWallet_iOS.framework; path = "Pods-DWallet-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C214429D4BC22B2030B91D7C7F824984 /* SwiftProtobuf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftProtobuf.debug.xcconfig; sourceTree = "<group>"; };
 		C394DAEF0A0182162847604D1CD4ECB7 /* TWCoinTypeConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWCoinTypeConfiguration.h; path = include/TrustWalletCore/TWCoinTypeConfiguration.h; sourceTree = "<group>"; };
 		C4300C9E2646B1FD8A858CF1FF2646FF /* HDVersion+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HDVersion+Extension.swift"; path = "Sources/Generated/HDVersion+Extension.swift"; sourceTree = "<group>"; };
@@ -743,7 +742,7 @@
 		D959B61C44338521FE4F7BC5F16497EB /* source_context.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = source_context.pb.swift; path = Sources/SwiftProtobuf/source_context.pb.swift; sourceTree = "<group>"; };
 		D994D5D1C8D0E6B9767C798626526C39 /* Ontology+Proto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Ontology+Proto.swift"; path = "Sources/Generated/Protobuf/Ontology+Proto.swift"; sourceTree = "<group>"; };
 		D9F23B15BF8947E0B70991D1C11B7232 /* Nervos.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Nervos.pb.swift; path = Sources/Generated/Protobuf/Nervos.pb.swift; sourceTree = "<group>"; };
-		DA38689149726A6BD5ED00D89B4AE4D0 /* common.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = common.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DA38689149726A6BD5ED00D89B4AE4D0 /* common.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = common.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DA57ACC4C7333AC6CDF7B308DC364B8A /* EOS+Proto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "EOS+Proto.swift"; path = "Sources/Generated/Protobuf/EOS+Proto.swift"; sourceTree = "<group>"; };
 		DB2D64D712F2459270275F06F75F28E0 /* Zilliqa.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zilliqa.pb.swift; path = Sources/Generated/Protobuf/Zilliqa.pb.swift; sourceTree = "<group>"; };
 		DBC230D1D6E9F0A77044A43578D7079E /* TWTheOpenNetworkProto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWTheOpenNetworkProto.h; path = include/TrustWalletCore/TWTheOpenNetworkProto.h; sourceTree = "<group>"; };
@@ -924,6 +923,7 @@
 				E5D0173A05D1A41B82D34D2181117DF6 /* ZigZag.swift */,
 				7E32B005C256B83F904545B4B5A8F624 /* Support Files */,
 			);
+			name = SwiftProtobuf;
 			path = SwiftProtobuf;
 			sourceTree = "<group>";
 		};
@@ -1178,6 +1178,7 @@
 				631B24F3E761DFA787647D6B3C3C911E /* Support Files */,
 				B2685F2E359C3378ADD0D17A8A19E9B9 /* Types */,
 			);
+			name = TrustWalletCore;
 			path = TrustWalletCore;
 			sourceTree = "<group>";
 		};

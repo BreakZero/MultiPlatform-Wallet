@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7F76D7D5F017DA20A2713C41709CDBBA"
-               BuildableName = "WalletCore.framework"
+               BuildableName = "TrustWalletCore.framework"
                BlueprintName = "TrustWalletCore"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
