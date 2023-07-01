@@ -9,21 +9,24 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material3.BottomSheetScaffold
+import androidx.compose.material3.BottomSheetDefaults
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Text
-import androidx.compose.material3.rememberBottomSheetScaffoldState
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
@@ -31,51 +34,26 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.easy.d.wallet.android.utils.toDate
 import com.easy.model.TODOTask
-import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskDetailScreen(
     uiState: TaskDetailUiState,
     onEdit: (Long) -> Unit,
     popBack: () -> Unit
 ) {
-    val scaffoldState = rememberBottomSheetScaffoldState()
-    val scope = rememberCoroutineScope()
-    BottomSheetScaffold(
-        sheetPeekHeight = 0.dp,
-        scaffoldState = scaffoldState,
-        sheetContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f),
-        sheetContent = {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentHeight()
-                    .padding(horizontal = 16.dp)
-            ) {
-                Button(
-                    modifier = Modifier.fillMaxWidth(), onClick = { /*TODO*/ }) {
-                    Text(text = "Delete TODO")
-                }
-                Button(
-                    modifier = Modifier.fillMaxWidth(), onClick = {
-                        scope.launch {
-                            scaffoldState.bottomSheetState.hide()
-                        }
-                    }) {
-                    Text(text = "Cancel")
-                }
-                Spacer(modifier = Modifier.height(32.dp))
-            }
-        }
-    ) {
-        Column(modifier = Modifier.fillMaxSize()) {
+    var showAction by remember {
+        mutableStateOf(false)
+    }
+
+    Box {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+        ) {
             DetailActionBar(
                 modifier = Modifier.fillMaxWidth(),
                 onDelete = {
-                    scope.launch {
-                        scaffoldState.bottomSheetState.expand()
-                    }
+                    showAction = true
                 },
                 onEdit = { onEdit(uiState.task.id) },
                 onBack = popBack
@@ -108,8 +86,46 @@ fun TaskDetailScreen(
                 text = "Created at ${uiState.task.createAt.toDate()}"
             )
         }
+        if (showAction) {
+            ActionSheet {
+                showAction = false
+            }
+        }
     }
+}
 
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun ActionSheet(
+    modifier: Modifier = Modifier,
+    onDismiss: () -> Unit
+) {
+    val modalBottomSheetState = rememberModalBottomSheetState()
+    ModalBottomSheet(
+        modifier = modifier.fillMaxWidth(),
+        sheetState = modalBottomSheetState,
+        onDismissRequest = onDismiss,
+        dragHandle = { BottomSheetDefaults.DragHandle() }
+    ) {
+        Button(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp), onClick = {
+                onDismiss()
+            }) {
+            Text(text = "Delete TODO")
+        }
+        Button(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp), onClick = {
+                onDismiss()
+            }) {
+            Text(text = "Cancel")
+        }
+        Spacer(modifier = Modifier.height(32.dp))
+    }
 }
 
 @Composable

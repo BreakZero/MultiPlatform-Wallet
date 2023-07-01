@@ -1,11 +1,17 @@
 package com.easy.d.wallet.android
 
+import android.app.Activity
+import android.app.ActivityManager
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.ScaffoldDefaults
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat
@@ -23,26 +29,36 @@ import com.easy.d.wallet.android.sign_in.bindSignInGraph
 import com.easy.d.wallet.android.todo.ToDoListRoute
 import com.easy.d.wallet.android.todo.bindToDoTaskListGraph
 import com.easy.d.wallet.android.todo.navigateToTaskList
+import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {
 
     private val mainViewModel: MainViewModel by viewModel()
 
+    private fun printMemoryLimited(activity: Activity) {
+        val actManager = activity.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        println(actManager.memoryClass)
+        println(actManager.largeMemoryClass)
+        println(Runtime.getRuntime().maxMemory() / (1024 * 1024))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
+        printMemoryLimited(this)
         setContent {
             MyApplicationTheme {
-                Scaffold(
-                    modifier = Modifier.fillMaxSize()
+                Surface(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(ScaffoldDefaults.contentWindowInsets.asPaddingValues())
                 ) {
                     val hasLogin by mainViewModel.hasLogin.collectAsStateWithLifecycle()
                     val navController = rememberNavController()
                     NavHost(
                         modifier = Modifier
-                            .fillMaxSize()
-                            .padding(it),
+                            .fillMaxSize(),
                         navController = navController,
                         startDestination = if (hasLogin) ToDoListRoute else SignInRoute
                     ) {

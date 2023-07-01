@@ -2,17 +2,15 @@ package com.easy.d.wallet.android.todo
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Card
@@ -20,6 +18,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -40,8 +39,8 @@ fun ToDoListScreen(
     onItemClick: (TODOTask) -> Unit,
     onAddTask: () -> Unit
 ) {
-    Box(modifier = Modifier.fillMaxSize()) {
-        Column(modifier = Modifier.fillMaxSize()) {
+    Scaffold(
+        topBar = {
             TodoTopBar(
                 modifier = Modifier
                     .height(58.dp)
@@ -50,34 +49,32 @@ fun ToDoListScreen(
                 tint = MaterialTheme.colorScheme.primary,
                 onSettingsClick = onSettingsClick
             )
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                item {
-                    ToDoListFilter(
-                        tint = MaterialTheme.colorScheme.primary,
-                        onResult = {}
-                    )
-                }
-                items(items = listUiState.todoList, key = {
-                    it.id
-                }) {
-                    ToDoItemView(toDoTask = it, onItemClick = onItemClick)
-                }
-                item { Spacer(modifier = Modifier.height(24.dp)) }
+        },
+        floatingActionButton = {
+            FloatingActionButton(onClick = onAddTask, shape = MaterialTheme.shapes.extraLarge) {
+                Icon(imageVector = Icons.Default.Add, contentDescription = null)
             }
         }
-        FloatingActionButton(
+    ) {
+        LazyColumn(
             modifier = Modifier
-                .align(alignment = Alignment.BottomEnd)
-                .padding(end = 12.dp, bottom = 12.dp),
-            shape = MaterialTheme.shapes.extraLarge,
-            onClick = onAddTask
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
+                .padding(it),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            Icon(imageVector = Icons.Default.Add, contentDescription = null)
+            item {
+                ToDoListFilter(
+                    tint = MaterialTheme.colorScheme.primary,
+                    onResult = {}
+                )
+            }
+            items(items = listUiState.todoList, key = {
+                it.id
+            }) {
+                ToDoItemView(toDoTask = it, onItemClick = onItemClick)
+            }
+            item { Spacer(modifier = Modifier.height(24.dp)) }
         }
     }
 }
@@ -122,6 +119,7 @@ private fun ToDoItemView(
 ) {
     Card(
         modifier = modifier.clickable { onItemClick(toDoTask) },
+        shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(containerColor = Color(toDoTask.accentColor))
     ) {
         Column(
@@ -205,7 +203,7 @@ fun ToDoListPreview() {
                 TODOTask(
                     id = it.toLong(),
                     title = "Design Logo",
-                    accentColor = 0xFF123321L,
+                    accentColor = 0xFFF79E89,
                     description = "",
                     deadline = 0x111L,
                     createAt = 0x111L
